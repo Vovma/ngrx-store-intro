@@ -1,1 +1,0 @@
-# ngrx-store-intro
