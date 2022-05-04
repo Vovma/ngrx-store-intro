@@ -1,1 +1,25 @@
-<span>ngRx Intro</span>
+<!-- <div>
+    <span>ngRx Intro</span>
+    <button (click)="getTeamList()">get Team</button>
+    <div *ngIf="data && !loading">
+        <span>{{ data | json }}</span>
+    </div>
+    <div
+        class="counter"
+        [class.green]="req.done === 'DONE'"
+        [class.orange]="req.done === 'PENDING'"
+        *ngFor="let req of counterEndData"
+    >
+        <span>REQUEST: {{ req.val }}</span>
+        <span>STATUS: {{ req.done }}</span>
+    </div>
+</div> -->
+
+<div class="app-content">
+    <div class="top-menu">
+        <app-top-menu></app-top-menu>
+    </div>
+    <div class="menu-drawer">
+        <app-intro-drawer></app-intro-drawer>
+    </div>
+</div>

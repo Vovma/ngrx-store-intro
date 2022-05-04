@@ -1,0 +1,32 @@
+// .counter {
+//     display: flex;
+//     flex-direction: column;
+//     background: red;
+//     color: white;
+//     margin-top: 10px;
+//     &.green {
+//         background: green;
+//     }
+//     &.orange {
+//         background: orange;
+//     }
+// }
+.app-content {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    .top-menu {
+        display: flex;
+
+    }
+    .menu-drawer {
+        display: flex;
+        height: 100%;
+
+        app-intro-drawer {
+            width: 100%;
+        }
+    }
+}
+
+  
