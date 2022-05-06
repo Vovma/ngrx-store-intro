@@ -1,0 +1,21 @@
+.top-menu {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+
+  mat-icon {
+    margin: auto 0;
+    padding: 10px 20px;
+    transition: 0.3s;
+
+    &.opened {
+      transform: rotate(-90deg);
+      transition: 0.3s;
+    }
+  }
+
+  span {
+    margin: auto 0;
+    padding: 10px 20px;
+  }
+}

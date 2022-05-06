@@ -12,21 +12,23 @@
 //     }
 // }
 .app-content {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  .top-menu {
     display: flex;
-    flex-direction: column;
-    height: 100vh;
-    .top-menu {
-        display: flex;
+    width: 100%;
 
+    app-top-menu {
+      width: 100%;
     }
-    .menu-drawer {
-        display: flex;
-        height: 100%;
+  }
+  .menu-drawer {
+    display: flex;
+    height: 100%;
 
-        app-intro-drawer {
-            width: 100%;
-        }
+    app-intro-drawer {
+      width: 100%;
     }
+  }
 }
-
-  

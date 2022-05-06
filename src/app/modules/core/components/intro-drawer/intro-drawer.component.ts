@@ -1,4 +1,9 @@
-import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import {
+  Component,
+  OnInit,
+  ChangeDetectionStrategy,
+  ChangeDetectorRef,
+} from '@angular/core';
 
 @Component({
   selector: 'app-intro-drawer',
@@ -9,7 +14,31 @@ import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 export class IntroDrawerComponent implements OnInit {
   showFiller = false;
 
-  constructor() {}
+  public topics = [
+    { name: 'switchMap' },
+    { name: 'exhaustMap' },
+    { name: 'mergeMap' },
+    { name: 'concatMap' },
+    { name: 'combineLatest' },
+    { name: 'concat' },
+    { name: 'forkJoin' },
+    { name: 'merge' },
+    { name: 'map' },
+    { name: 'takeUntil' },
+    { name: 'first' },
+    { name: 'filter' },
+    { name: 'take' },
+    { name: 'withLatestFrom' },
+    { name: 'tap' },
+    { name: 'delay' },
+  ];
+
+  public toggleSideNav(): void {
+    this.showFiller = !this.showFiller;
+    this.cd.markForCheck();
+  }
+
+  constructor(public cd: ChangeDetectorRef) {}
 
   ngOnInit(): void {}
 }

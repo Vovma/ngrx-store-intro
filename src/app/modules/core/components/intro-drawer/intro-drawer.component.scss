@@ -2,13 +2,24 @@ mat-drawer-container {
   height: 100%;
 }
 
-.example-sidenav-content {
-  display: flex;
-  height: 100%;
-  align-items: center;
-  justify-content: center;
-}
+.sidenav-content {
+  .menu-content {
+    display: flex;
+    flex-direction: column;
 
-.example-sidenav {
-  padding: 20px;
+    span {
+      text-align: center;
+      padding: 10px 20px;
+    }
+
+    button {
+      padding: 10px 20px;
+      border: 0;
+      background: transparent;
+
+      &:hover {
+        background: lightgray;
+      }
+    }
+  }
 }

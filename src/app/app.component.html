@@ -17,9 +17,12 @@
 
 <div class="app-content">
     <div class="top-menu">
-        <app-top-menu></app-top-menu>
+        <app-top-menu
+            [menuToggleStatus]="sidenav.showFiller"
+            (toggleMenuAction)="sidenav.toggleSideNav()"
+        ></app-top-menu>
     </div>
     <div class="menu-drawer">
-        <app-intro-drawer></app-intro-drawer>
+        <app-intro-drawer #sidenav></app-intro-drawer>
     </div>
 </div>

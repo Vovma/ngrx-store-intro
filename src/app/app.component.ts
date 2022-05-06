@@ -1,8 +1,10 @@
 import { HttpClient } from '@angular/common/http';
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit, ViewChild } from '@angular/core';
+import { MatSidenav } from '@angular/material/sidenav';
 import { Observable, of, Subject } from 'rxjs';
 
 import { debounceTime, delay, switchMap, takeUntil, tap } from 'rxjs/operators';
+import { IntroDrawerComponent } from './modules/core/components/intro-drawer/intro-drawer.component';
 
 @Component({
   selector: 'app-root',
@@ -10,6 +12,8 @@ import { debounceTime, delay, switchMap, takeUntil, tap } from 'rxjs/operators';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent implements OnInit, OnDestroy {
+  @ViewChild(IntroDrawerComponent) matDrawer!: IntroDrawerComponent;
+
   title = 'ngrx-intro';
 
   public teams$ = new Subject();

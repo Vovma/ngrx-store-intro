@@ -1,1 +1,10 @@
-<p>top-menu works!</p>
+<div class="top-menu">
+    <mat-icon
+        (click)="toggleMenu()"
+        [class.opened]="menuToggleStatus"
+    >
+        menu
+    </mat-icon>
+    <span>LOGO</span>
+    <span>NgVoma</span>
+</div>
