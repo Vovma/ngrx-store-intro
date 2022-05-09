@@ -9,7 +9,12 @@
     >
         <div class="menu-content">
             <span>Topics</span>
-            <button *ngFor="let topic of topics">{{ topic.name }}</button>
+            <button
+                *ngFor="let topic of topics"
+                (click)="navigateTopic(topic.name)"
+            >
+                {{ topic.name }}
+            </button>
         </div>
     </mat-drawer>
 </mat-drawer-container>

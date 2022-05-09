@@ -4,6 +4,7 @@ import {
   ChangeDetectionStrategy,
   ChangeDetectorRef,
 } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-intro-drawer',
@@ -15,6 +16,7 @@ export class IntroDrawerComponent implements OnInit {
   showFiller = false;
 
   public topics = [
+    { name: 'NgRx Store' },
     { name: 'switchMap' },
     { name: 'exhaustMap' },
     { name: 'mergeMap' },
@@ -38,7 +40,15 @@ export class IntroDrawerComponent implements OnInit {
     this.cd.markForCheck();
   }
 
-  constructor(public cd: ChangeDetectorRef) {}
+  public navigateTopic(topic: string): void {
+    switch (topic) {
+      case 'NgRx Store': {
+        this.router.navigate(['/home']);
+      }
+    }
+  }
+
+  constructor(public cd: ChangeDetectorRef, public router: Router) {}
 
   ngOnInit(): void {}
 }

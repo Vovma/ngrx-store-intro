@@ -1,0 +1,44 @@
+<div class="user-form">
+    <div class="header">
+        <span>User Form</span>
+    </div>
+    <form [formGroup]="userForm">
+        <mat-form-field
+            class="example-full-width"
+            appearance="outline"
+        >
+            <mat-label>Name</mat-label>
+            <input
+                formControlName="name"
+                matInput
+                placeholder="Name"
+            >
+        </mat-form-field>
+        <mat-form-field
+            class="example-full-width"
+            appearance="outline"
+        >
+            <mat-label>Surname</mat-label>
+            <input
+                formControlName="surname"
+                matInput
+                placeholder="Surname"
+            >
+        </mat-form-field>
+
+        <mat-form-field
+            class="example-full-width"
+            appearance="outline"
+        >
+            <mat-label>Description</mat-label>
+            <input
+                formControlName="description"
+                matInput
+                placeholder="Description"
+            >
+        </mat-form-field>
+    </form>
+    <div class="submit-btn">
+        <button (click)="submitForm()">Submit</button>
+    </div>
+</div>

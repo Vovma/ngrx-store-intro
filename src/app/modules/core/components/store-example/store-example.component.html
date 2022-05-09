@@ -1,0 +1,59 @@
+<div class="store-image">
+    <img src="/assets/store.png">
+</div>
+<div class="example1">
+    <span>Counter Example</span>
+    <div class="counter">
+        <button (click)="decrement()">-</button>
+        {{ this.counter$ | async }}
+        <button (click)="increment()">+</button>
+    </div>
+</div>
+
+<div class="example2">
+    <span>Product Example</span>
+    <div
+        class="user-content"
+        *ngIf="user$ | async as user"
+    >
+        <span class="user">USER</span>
+        <span>Name {{ user.name }}</span>
+        <span>Surname {{ user.surname }}</span>
+        <span>Description {{ user.description }}</span>
+    </div>
+    <button
+        *ngIf="!(user$ | async)"
+        (click)="openDialog()"
+    >
+        Create
+    </button>
+    <button
+        *ngIf="user$ | async"
+        (click)="removeUser()"
+    >
+        Remove
+    </button>
+</div>
+
+<div class="example3">
+    <div class="header">
+        <span>Product Example</span>
+        <button (click)="cleanTeams()">Clean</button>
+    </div>
+    <span *ngIf="teamsLoading$ | async">LOADING...</span>
+    <div
+        class="user-content"
+        *ngIf="!(teamsLoading$ | async)"
+    >
+        <div
+            class="team"
+            *ngFor="let team of teams$ | async"
+        >
+            <span>ID {{ team.id }}</span>
+            <span>Name {{ team.name }}</span>
+            <span>Surname {{ team.coach }}</span>
+            <span>Description {{ team.description }}</span>
+        </div>
+    </div>
+    <button (click)="getTeams()">Get</button>
+</div>
